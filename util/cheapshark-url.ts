@@ -1,1 +1,1 @@
-export const dealsUrl = "https://www.cheapshark.com/api/1.0/deals?pageSize=8";
+export const dealsBaseUrl = "https://www.cheapshark.com/api/1.0/deals?";
