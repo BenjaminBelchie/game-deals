@@ -1,5 +1,6 @@
 import { Game } from "@/types/game";
 import { buttonVariants } from "./ui/button";
+import { dealLinkBaseUrl } from "@/util/cheapshark-url";
 
 export function DealCard(game: Game){
     return(
@@ -13,7 +14,7 @@ export function DealCard(game: Game){
             <div className="p-5 flex flex-col justify-between"> 
               <div className=" flex flex-col ">
                 <a 
-                 href={`https://www.cheapshark.com/redirect?dealID=${game.dealID}`}
+                 href={`${dealLinkBaseUrl}${game.dealID}`}
                  target="_blank"
                  rel="noreferrer">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{game.title}</h5>

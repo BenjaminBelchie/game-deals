@@ -24,6 +24,21 @@ export function SiteHeader() {
                   variant: "ghost",
                 })}
               >
+                <Icons.favourites className="h-5 w-5" />
+                <span className="sr-only">Favourites</span>
+              </div>
+            </a>
+            <a
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div
+                className={buttonVariants({
+                  size: "sm",
+                  variant: "ghost",
+                })}
+              >
                 <Icons.user className="h-5 w-5" />
                 <span className="sr-only">Account</span>
               </div>

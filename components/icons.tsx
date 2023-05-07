@@ -7,6 +7,7 @@ import {
   Gamepad2,
   User,
   type Icon as LucideIcon,
+  Heart,
 } from "lucide-react"
 
 export type Icon = LucideIcon
@@ -17,4 +18,5 @@ export const Icons = {
   twitter: Twitter,
   logo: Gamepad2,
   user: User,
+  favourites: Heart,
 }

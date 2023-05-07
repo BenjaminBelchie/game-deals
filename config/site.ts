@@ -9,6 +9,14 @@ export const siteConfig = {
       title: "Home",
       href: "/",
     },
+    {
+      title: "Browse",
+      href: "/deals/browse",
+    },
+    {
+      title: "Search",
+      href: "/deals/search",
+    },
   ],
   links: {
     twitter: "https://twitter.com/shadcn",
