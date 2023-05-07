@@ -34,16 +34,16 @@ const DealsCarousel = (props: Props) => {
                 <a href={`${dealLinkBaseUrl}${deals[currentIndex].dealID}`} target="_blank" rel="noreferrer">
                 <div
                     style={{ backgroundImage: `url(${deals[currentIndex].thumb})`}}
-                    className='w-full h-full rounded-2xl bg-center bg-cover bg-no-repeat duration-500 backdrop-blur-sm bg-white/30'>
+                    className='h-full w-full rounded-2xl bg-white/30 bg-cover bg-center bg-no-repeat backdrop-blur-sm duration-500'>
 
                     </div>
                 </a>
                 {/* Left Arrow */}
-                <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+                <div className='absolute left-5 top-[50%] hidden -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white group-hover:block'>
                     <BsChevronCompactLeft onClick={prevSlide} size={30} />
                 </div>
                 {/* Right Arrow */}
-                <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+                <div className='absolute right-5 top-[50%] hidden -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white group-hover:block'>
                     <BsChevronCompactRight onClick={nextSlide} size={30} />
                 </div>
             </div>
