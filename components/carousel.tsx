@@ -4,7 +4,7 @@ import { Game } from "@/types/game"
 import { dealLinkBaseUrl } from "@/util/cheapshark-url";
 import { useEffect, useState } from "react";
 import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs';
-import Color, { useColor } from 'color-thief-react';
+import { useSwipeable } from "react-swipeable";
 
 type Props = {
     deals: Game[],
@@ -27,10 +27,27 @@ const DealsCarousel = (props: Props) => {
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide()
+        }, 10000);
+
+        return () => {
+            if(interval) {
+                clearInterval(interval);
+            }
+        }
+    })
+
+    const handlers = useSwipeable({
+        onSwipedLeft: () => nextSlide(),
+        onSwipedRight: () => prevSlide(),
+    })
       
     return(
-            <div className='group relative h-[500px] w-[330px] px-4 lg:h-[650px] lg:w-[750px]'>
-
+            <div {...handlers} className='group relative h-[500px] w-[330px] px-4 lg:h-[650px] lg:w-[750px]'>
+                
                 <a href={`${dealLinkBaseUrl}${deals[currentIndex].dealID}`} target="_blank" rel="noreferrer">
                 <div
                     style={{ backgroundImage: `url(${deals[currentIndex].thumb})`}}
