@@ -2,11 +2,12 @@ import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
-import { dealLinkBaseUrl, dealsBaseUrl } from "@/util/cheapshark-url"
+import { dealLinkBaseUrl, dealsBaseUrl, storesUrl } from "@/util/cheapshark-url"
 import { Game } from "@/types/game";
 import { DealCard } from "@/components/deal-card";
 import Carousel from "@/components/carousel";
 import HighlightedDeals from "@/components/highlighted-deals";
+import { Store } from "@/types/store";
 
 async function getFeaturedDeals() {
   const res = await fetch(dealsBaseUrl);
@@ -26,9 +27,19 @@ async function getHighlightedDeals() {
   return res.json();
 }
 
+async function getStores() {
+  const res = await fetch(storesUrl);
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+ 
+  return res.json();
+}
+
 export default async function IndexPage() {
   const data: Game[] = await getFeaturedDeals();
   const highlightedDeals: Game[] = await getHighlightedDeals();
+  const stores: Store[] = await getStores();
 
   return (
     <section className="container flex flex-col items-start justify-start gap-6 pb-8 pt-6 md:py-10">
@@ -41,7 +52,7 @@ export default async function IndexPage() {
 
       <div className="my-4 flex w-full flex-col justify-center py-3 md:flex-row md:justify-between">
         <Carousel deals={data}/>
-        <HighlightedDeals deals={highlightedDeals}/>
+        <HighlightedDeals deals={highlightedDeals} stores={stores}/>
       </div>
 
       <div className="flex w-full items-center justify-center">

@@ -14,9 +14,7 @@ export function SiteHeader() {
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
             <a
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
+              href="/favourites"
             >
               <div
                 className={buttonVariants({
@@ -29,9 +27,7 @@ export function SiteHeader() {
               </div>
             </a>
             <a
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
+              href="/account"
             >
               <div
                 className={buttonVariants({
