@@ -29,8 +29,7 @@ const DealsCarousel = (props: Props) => {
     };
       
     return(
-        
-            <div className=' w-[750px] h-[635px] px-4 relative group'>
+            <div className='group relative h-[500px] w-[330px] px-4 lg:h-[635px] lg:w-[750px]'>
 
                 <a href={`${dealLinkBaseUrl}${deals[currentIndex].dealID}`} target="_blank" rel="noreferrer">
                 <div

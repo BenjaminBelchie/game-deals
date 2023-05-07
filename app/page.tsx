@@ -39,7 +39,7 @@ export default async function IndexPage() {
         </h1>
       </div>
 
-      <div className="my-4 flex w-full justify-between py-3">
+      <div className="my-4 flex w-full flex-col justify-center py-3 md:flex-row md:justify-between">
         <Carousel deals={data}/>
         <HighlightedDeals deals={highlightedDeals}/>
       </div>
